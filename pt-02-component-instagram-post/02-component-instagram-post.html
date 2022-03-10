@@ -1,0 +1,82 @@
+<html>
+
+    <head>
+        <style>
+            .post-component {
+                text-align: center;
+            }
+
+            .post-header-component {
+                display: flex;
+                justify-content: center;
+            }
+
+            .user-name-description,
+            .post-description-component {
+                padding-left: 9px;
+                padding-top: 9px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="instagramPostApp"></div>
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Babel Script -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/jsx">
+
+           const instagramPostApp = document.getElementById("instagramPostApp")
+
+           function AvatarImage() {
+               return <img src="https://posts-decriptando.s3.amazonaws.com/post-instagram-component/256-512.webp" width="75" />
+           }
+
+           function Username() {
+               return <span><strong>Nome do Usuário</strong></span>
+           }
+
+           function UserDescription() {
+               return <p><small>Lorem ipsum summet</small></p>
+           }
+
+           function PostImage() {
+               return <img src="https://posts-decriptando.s3.amazonaws.com/post-instagram-component/istockphoto-1226328537-170667a.jpeg" />
+           }
+
+           function PostDescription() {
+               return <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus...</span>
+           }
+
+           function PostComponent() {
+               return (
+                    <div class="post-component">
+                        <div class="post-header-component">
+                            <div class="user-avatar">
+                                <AvatarImage />
+                            </div >
+                            <div class="user-name-description">
+                                <Username />
+                                <UserDescription />
+                            </div >
+                        </div >
+                        <div class="post-body-component">
+                            <PostImage />
+                        </div >
+                        <div class="post-description-component">
+                            <Username />: <PostDescription />
+                        </div >
+                    </div >
+               )
+            }
+           
+            ReactDOM.render(<PostComponent />, instagramPostApp)
+
+        </script>
+
+    </body>
+
+</html>
